@@ -7,7 +7,7 @@ import com.diegogomezlopez.rockpaperscissors.services.RoundResultService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RoundResultServiceImpl implements RoundResultService {
+public class RoundResultServiceImpl extends AbstractCrudRepository<RoundResult> implements RoundResultService {
 
     @Override
     public RoundResult getRoundResult(final Move player1Move, final Move player2Move) {
