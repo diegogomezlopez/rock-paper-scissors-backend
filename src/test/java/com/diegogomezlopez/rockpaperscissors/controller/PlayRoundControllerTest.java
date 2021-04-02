@@ -3,9 +3,11 @@ package com.diegogomezlopez.rockpaperscissors.controller;
 import com.diegogomezlopez.rockpaperscissors.controllers.PlayRoundController;
 import com.diegogomezlopez.rockpaperscissors.domain.Move;
 import com.diegogomezlopez.rockpaperscissors.domain.Result;
+import com.diegogomezlopez.rockpaperscissors.domain.RoundHistory;
 import com.diegogomezlopez.rockpaperscissors.domain.RoundResult;
 import com.diegogomezlopez.rockpaperscissors.dto.RoundResultDTO;
 import com.diegogomezlopez.rockpaperscissors.mapper.RoundResultMapper;
+import com.diegogomezlopez.rockpaperscissors.services.RoundHistoryService;
 import com.diegogomezlopez.rockpaperscissors.services.RoundResultService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,6 +38,9 @@ public class PlayRoundControllerTest {
     @Mock
     RoundResultService roundResultService;
 
+    @Mock
+    RoundHistoryService roundHistoryService;
+
     MockMvc mockMvc;
 
     @BeforeEach
@@ -55,9 +60,16 @@ public class PlayRoundControllerTest {
                 .player2Move(roundResult.getPlayer2Move().getMove())
                 .result(roundResult.getResult().getResult())
                 .build();
+        RoundHistory roundHistory = RoundHistory.builder()
+                .player1Wins(0)
+                .player2Wins(0)
+                .totalDraws(0)
+                .roundsPlayed(0)
+                .build();
 
         when(roundResultMapper.roundResultToRoundResultDTO(any(RoundResult.class))).thenReturn(roundResultDTO);
         when(roundResultService.getRoundResult(any(Move.class), any(Move.class))).thenReturn(roundResult);
+        when(roundHistoryService.update(any(RoundResult.class))).thenReturn(roundHistory);
 
         mockMvc.perform(get(PlayRoundController.BASE_URL)
                 .contentType(MediaType.APPLICATION_JSON))
