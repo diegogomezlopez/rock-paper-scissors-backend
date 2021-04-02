@@ -1,7 +1,5 @@
 package com.diegogomezlopez.rockpaperscissors.dto;
 
-import com.diegogomezlopez.rockpaperscissors.domain.Move;
-import com.diegogomezlopez.rockpaperscissors.domain.Result;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,11 +7,11 @@ import lombok.Data;
 @Data
 public class RoundResultDTO {
 
-    private Move player1Move;
-    private Move player2Move;
-    private Result result;
+    private String player1Move;
+    private String player2Move;
+    private String result;
 
-    public RoundResultDTO(final Move player1Move, final Move player2Move, final Result result) {
+    public RoundResultDTO(final String player1Move, final String player2Move, final String result) {
         this.player1Move = player1Move;
         this.player2Move = player2Move;
         this.result = result;
