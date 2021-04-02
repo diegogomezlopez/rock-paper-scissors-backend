@@ -23,7 +23,7 @@ public enum Move {
             case SCISSORS:
                 return opponentMove.equals(PAPER);
             default:
-                throw new IllegalStateException("Invalid ");
+                throw new IllegalStateException("Invalid Move");
         }
     }
 }
