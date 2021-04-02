@@ -37,8 +37,8 @@ public class RoundResultMapperTest {
 
         RoundResultDTO roundResultDTO = roundResultMapper.roundResultToRoundResultDTO(roundResult);
 
-        assertEquals(roundResult.getPlayer1Move(), roundResultDTO.getPlayer1Move());
-        assertEquals(roundResult.getPlayer2Move(), roundResultDTO.getPlayer2Move());
-        assertEquals(roundResult.getResult(), roundResultDTO.getResult());
+        assertEquals(roundResult.getPlayer1Move().getMove(), roundResultDTO.getPlayer1Move());
+        assertEquals(roundResult.getPlayer2Move().getMove(), roundResultDTO.getPlayer2Move());
+        assertEquals(roundResult.getResult().getResult(), roundResultDTO.getResult());
     }
 }
