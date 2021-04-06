@@ -5,11 +5,13 @@ import com.diegogomezlopez.rockpaperscissors.dto.RoundHistoryDTO;
 import com.diegogomezlopez.rockpaperscissors.mapper.RoundHistoryMapper;
 import com.diegogomezlopez.rockpaperscissors.services.RoundHistoryService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin
 @RequestMapping(RoundHistoryController.BASE_URL)
 public class RoundHistoryController {
 
