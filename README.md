@@ -9,6 +9,7 @@ Testing is done with:
 * [Lombok](https://projectlombok.org/) - Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.
 * [Mapstruct](https://mapstruct.org/) - MapStruct is a code generator that greatly simplifies the implementation of mappings between Java bean types based on a convention over configuration approach.
 * [Maven](https://maven.apache.org/) - Apache tool for project management.
+* [Swagger](https://swagger.io/) - implify API development for users, teams, and enterprises with the Swagger open source and professional toolset.
 
 
 ### Testing
