@@ -16,7 +16,7 @@ Testing is done with:
 
 Testing tools and frameworks:
 
-* [JUnit5](https://junit.org/junit5/) - JUniT5 framework for unit testing.
+* [JUnit5](https://junit.org/junit5/) - JUnit5 framework for unit testing.
 * [Mockito](https://site.mockito.org/) - For mocking classes.
 * [MockMvc](https://spring.io/guides/gs/testing-web/) - To E2E web application/RestAPI testing.
 
